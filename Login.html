@@ -37,7 +37,7 @@
 			
 			<!-- Admission from -->
 			<div class="r_form">
-				<form method="post" onsubmit="sendmail(); reset(); return false;">
+				<form method="post" onsubmit="login(); reset(); return false; ">
 					<div class="input_wrap">
 						<label for="yourname">Username</label>
 						<div class="input_item">
@@ -49,13 +49,9 @@
 						<label for="emailaddress">Password</label>
 						<div class="input_item">
 							<i class="fa fa-envelope" id="icon"></i>
-							<input type="email" name="email address" class="input" id="emailaddress" placeholder="Enter Password" required>
+							<input type="password" name="password" class="input" id="emailaddress" placeholder="Enter Password" required>
 						</div>
 					</div>
-
-	
-					
-	
 					<input type="submit" class="button" value="Login">
 					<div ></div>
 					
@@ -74,13 +70,13 @@
     
 </body>
 <script src=" https://smtpjs.com/v3/smtp.js"></script>
-<script>
+<!-- <script>
     function sendmail(){
 		Email.send({}).then(
 	message => alert("Your Message Is Successful - Team GGU")
 );
 		}
-    </script>
+    </script> -->
 <script>
     var navLinks= document.getElementById("navLinks");
 
@@ -91,5 +87,19 @@ function hidemenu(){
     navLinks.style.right="-200px";
 }
 </script>
+
+<script>
+    var uname = document.getElementById("yourname");
+    var pass = document.getElementById("emailaddress");
+    var login = () => {
+        if(uname.value == "maeez" && pass.value == "2604"){
+            window.location.href = "Dashboard.html";
+        }
+        else{
+            alert("Invalid Credentials");
+        }
+    }
+</script>
+
 
 </html>
